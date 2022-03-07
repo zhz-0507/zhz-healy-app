@@ -5,7 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+      <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/>
+    <script type="text/javascript" src="//api.map.baidu.com/api?v=1.1&ak=oZYQ0hx6cS1bIQG15hvUdP36qy6LLhIm"></script>
+
     <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <!-- 开启顶部安全区适配 -->
+    <van-nav-bar safe-area-inset-top />
+
+    <!-- 开启底部安全区适配 -->
+    <van-number-keyboard safe-area-inset-bottom />
   </head>
   <body>
     <noscript>

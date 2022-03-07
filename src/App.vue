@@ -1,32 +1,67 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+      <transition :name="transitionName">
+        <router-view class="router-view" />
+      </transition>
+      <Tabbar v-if="isShowTab"></Tabbar>
+    
   </div>
 </template>
 
+
 <style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.router-view{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: #fff!important;
 }
 </style>
+
+<script>
+import Tabbar from './components/tabbar/index.vue'
+export default {
+  components: {
+   Tabbar
+  },
+  data() {
+    return {
+      transitionName: 'slide-left',
+      isShowTab:true,
+      ShowMenuList: ['', '/home', '/test', '/cute', '/mine'], // 该变量为需要导航栏的数组
+    }
+  },
+
+  watch: {
+      $route(to, from) {
+        // 底部导航出现在应有的路由中
+        if(this.ShowMenuList.includes(to.path)){
+          this.isShowTab = true
+        }else{
+          this.isShowTab = false
+        }
+        // 有主级到次级
+        if (to.meta.index > from.meta.index) {
+          this.transitionName = 'slide-left' // 向左滑动
+        } else if (to.meta.index < from.meta.index) {
+          // 由次级到主级
+          this.transitionName = 'slide-right'
+        } else {
+          this.transitionName = ''   //同级无过渡效果
+        }
+      }
+    }
+  
+
+  
+
+
+}
+</script>
+
+
+

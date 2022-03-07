@@ -1,0 +1,66 @@
+.list-wrapper-all{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 5px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.list-wrapper-single{
+  width: 50%;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.single-inner{
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 5px;
+  img{
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+  }
+  .inner-txt{
+    width: 100%;
+    font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #222222;
+    letter-spacing: 0;
+    line-height: 32px;
+    img{
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+    }
+  }
+
+  .txt-title{
+    overflow: hidden;/*超出部分隐藏*/
+    text-overflow:ellipsis;/* 超出部分显示省略号 */
+    white-space: nowrap;/*规定段落中的文本不进行换行 */
+  }
+
+  .txt-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .txt-img{
+      display: flex;
+    }
+    span{
+      font-size: 14px;
+      margin-left: 4px;
+    }
+
+    .icon-txt{
+      font-size: 16px;
+      color: #9A9A9A;;
+      margin-right: 4px;
+    }
+  }
+}
+
