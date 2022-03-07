@@ -31,13 +31,14 @@ export default {
   data() {
     return {
       transitionName: 'slide-left',
-      isShowTab:true,
-      ShowMenuList: ['', '/home', '/test', '/cute', '/mine'], // 该变量为需要导航栏的数组
+      isShowTab:false,
+      ShowMenuList: ['/home', '/test', '/cute', '/mine'], // 该变量为需要导航栏的数组
     }
   },
 
   watch: {
       $route(to, from) {
+        console.log(to)
         // 底部导航出现在应有的路由中
         if(this.ShowMenuList.includes(to.path)){
           this.isShowTab = true
