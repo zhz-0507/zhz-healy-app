@@ -1,81 +1,243 @@
-.mine-index{
-  .mine-index-header{
-    height: 260px;
-    background-color: #68B0FF;
-    padding: 10px 20px;
-  }
+// .mine-index{
+//   .mine-index-header{
+//     height: 260px;
+//     background-color: #68B0FF;
+//     padding: 10px 20px;
+//   }
 
-  .mine-inde-middle{
-    margin: 0 10px;
-    margin-top: -20px;
-    height: 100px;
-    border-radius: 14px;
-    background-color: bisque;
-    z-index: 999;
-  }
+//   .mine-inde-middle{
+//     margin: 0 10px;
+//     margin-top: -20px;
+//     height: 100px;
+//     border-radius: 14px;
+//     background-color: bisque;
+//     z-index: 999;
+//   }
 
-  .header-top{
-    height: 100px;
-    // line-height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+//   .header-top{
+//     height: 100px;
+//     // line-height: 100px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
 
-  .header-bottom{
-    margin-top: 60px;
-    margin-left: 22px;
-    font-size: 22px;
-    display: flex;
-    justify-content: space-between;
-    .good{
-      // width: 20px;
-    }
-  }
+//   .header-bottom{
+//     margin-top: 60px;
+//     margin-left: 22px;
+//     font-size: 22px;
+//     display: flex;
+//     justify-content: space-between;
+//     .good{
+//       // width: 20px;
+//     }
+//   }
         
 
-  .top-r{
-    line-height: 25px;
-    text-align: center;
-    width: 60px;
-    height: 25px;
-    background-color: #FE9926;
-    border-radius: 25px;
+//   .top-r{
+//     line-height: 25px;
+//     text-align: center;
+//     width: 60px;
+//     height: 25px;
+//     background-color: #FE9926;
+//     border-radius: 25px;
+//   }
+//   .top-l{
+//     display: flex;
+//     align-items: center;
+//     .h-t{
+//       font-size: 20px;
+//       color: aliceblue;
+//     }
+
+//     .h-d{
+//       font-size: 14px;
+//       color: #323233;
+//     }
+
+//     .txt-h{
+//       margin-left: 10px;
+//     }
+
+//   }
+//   .img-h{
+//     width: 77px;
+//     height: 77px;
+//     background-color: red;
+//     border-radius: 50%;
+//   }
+
+//   .mine-bottom{
+//     padding: 10px 20px;
+//     color: #7C7C7C;
+//     .single{
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+//       height: 40px;
+//       border-bottom: 1px solid #C2C2C2;
+//     }
+//   }
+// }
+
+.backg{
+  height: 700px;
+  background: url("../../assets/user/bg.png") no-repeat; 
+  .shezhi{
+      position: absolute;
+      left: 340px;
+      top: 10px;
+      img{
+          width: 20px;
+          height: 20px;
+      }
   }
-  .top-l{
-    display: flex;
-    align-items: center;
-    .h-t{
-      font-size: 20px;
-      color: aliceblue;
-    }
-
-    .h-d{
-      font-size: 14px;
-      color: #323233;
-    }
-
-    .txt-h{
-      margin-left: 10px;
-    }
-
-  }
-  .img-h{
-    width: 77px;
-    height: 77px;
-    background-color: red;
-    border-radius: 50%;
-  }
-
-  .mine-bottom{
-    padding: 10px 20px;
-    color: #7C7C7C;
-    .single{
+  .header{
+      // background: url("../assets/user/bg.png") no-repeat;  
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
-      height: 40px;
-      border-bottom: 1px solid #C2C2C2;
-    }
+      padding-top: 43px;
+      flex-direction: column;
+      .avatar {
+          width: 116px;
+          height: 116px;
+          display: block;
+          border-radius: 50%;
+      }
+      .name{
+          margin-top: 15px;
+          font-weight: 550;
+          span{
+              font-family: AdobeHeitiStd-Regular;
+            font-size: 24px;
+              color: #343434;
+          }
+      } 
+      .introduceSign{
+          margin-top: 8px;
+          font-size: 12px;
+          color: #737373;
+      }
+  }
+  .main{
+      display: flex;
+      justify-content: space-around;
+      margin: 16px 18px;
+      .guanzhu{
+          background-color: #f0f3fc;
+          width: 145px;
+          height: 95px;
+          border-radius: 12.5px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          img{
+              width: 40px;
+              height: 40px;
+              margin-top: 8px;
+              margin-bottom: 5px;
+          }
+          .count{
+              font-family: AdobeHeitiStd-Regular;
+              font-size: 14px;
+              font-weight: 550;
+              color: #343434;
+          }
+          .text{
+              font-size: 11.5px;
+              color: #737373;
+          }
+  
+      }
+      .fensi{
+          width: 145px;
+          height: 95px;
+          background-color: #eaf9ff;
+          border-radius: 12.5px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          img{
+              width: 40px;
+              height: 40px;
+              margin-top: 8px;
+              margin-bottom: 5px;
+          }
+          .count{
+              font-family: AdobeHeitiStd-Regular;
+              font-size: 14px;
+              font-weight: 550;
+              color: #343434;
+          }
+          .text{
+              font-size: 11.5px;
+              color: #737373;
+          }
+      }
+  }
+  .item-list{
+      height: 32.5px;
+      display: flex;
+      justify-content: space-around;
+      margin:0 10px;
+      .item{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .count{
+              font-family: AdobeHeitiStd-Regular;
+              font-size: 14px;
+              color: #343434;
+              font-weight: 550;
+          }
+          .text{
+              font-size: 11.5px;
+              color: #737373;
+          }
+      }
+  }
+  .list{
+      .title{
+          margin-left: 15px;
+          margin-right: 5px;
+          display: flex;
+          flex-direction: row;
+          .back{
+              margin-top: 12px;
+              margin-right: 3px;
+              width: 6px;
+              height: 22px;
+              background-image: linear-gradient(180deg, #3fbbfe 0%, #a541ff 100%);
+          }
+          h2{
+              font-size: 17px;
+              color: #5d5d5d;
+              padding-left: 4px;
+              font-weight: 550;
+              letter-spacing: 3px;
+          }
+      }
+      .list-item-wrapper{
+          display: flex;
+          flex-wrap: wrap;
+          margin-left: 10px;
+          .list-item{
+              width: 90px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              margin-bottom: 10px;
+              img{    
+                  width: 41.5px;
+                height: 44px;
+              }
+              span{
+                  font-family: SimHei;
+                  font-size: 13px;
+                  color: #737373;
+              }
+          }
+      }
   }
 }

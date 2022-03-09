@@ -8,7 +8,10 @@ import { Icon } from 'vant';
 import { NavBar } from 'vant';
 import { Toast } from 'vant';
 import { Uploader } from 'vant';
+import { Dialog } from 'vant';
 
+// 全局注册
+Vue.use(Dialog);
 Vue.use(Uploader);
 Vue.use(Toast);
 Vue.use(NavBar);

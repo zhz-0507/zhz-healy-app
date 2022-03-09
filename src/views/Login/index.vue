@@ -54,6 +54,8 @@ export default {
       let formData = this._getParamsByLogin()
       let res = await postLogin(formData);
       if(res && res.resultCode == 200) {
+        let token = res.data.token;
+        localStorage.setItem('token',token)
         this.$toast('登录成功');
         setTimeout(() => {
           this.$router.push(`/home`); 

@@ -23,7 +23,6 @@ export default {
   },
   data() {
     return {
-        LocationCity:"正在定位"    //给渲染层定义一个初始值
 
     }
   },

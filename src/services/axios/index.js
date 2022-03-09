@@ -11,7 +11,7 @@ axios.defaults.withCredentials = true
 axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest'
 
 // 判断用户登陆状态是通过token实现
-axios.defaults.headers['token'] = localStorage.getItem('token') || ''
+axios.defaults.headers['token'] = localStorage.getItem('token') || '';
 // post 请求时，发送 json 形式的数据包
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 // 返回的数据可以通过拦截处理后返回

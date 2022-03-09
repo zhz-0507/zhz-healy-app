@@ -47,6 +47,16 @@ const routes = [
     path: '/cute',
     name: 'Cute',
     component: () => import(/* webpackChunkName: "about" */ '../views/cute-page /index.vue')
+  },
+  {
+    path: '/set',
+    name: 'Set',
+    component: () => import(/* webpackChunkName: "about" */ '../views/setting-page/index.vue')
+  },
+  {
+    path: '/map',
+    name: 'Map',
+    component: () => import(/* webpackChunkName: "about" */ '../views/publish-page/map.vue')
   }
 ]
 
