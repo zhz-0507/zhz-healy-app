@@ -2,7 +2,7 @@
   <div class="list-h5">
     <!-- 最新推荐 -->
     <div class="good" :style="{ paddingBottom: '100px'}">
-        <header class="good-header">最新推荐</header>
+        <!-- <header class="good-header">最新推荐</header> -->
         <div class="good-box">
           <div class="good-item" v-for="(item,index) in list" :key="index" @click="handleItem(item)">
             <img :src="(item.url)" class="item-img">
@@ -37,7 +37,6 @@
 import {getHomeDetail} from '.././/../services/home'
 //components
 import ScrollLoad from '../../common/scroll-load/index.vue'
-import { formatImg  } from '../../common/filters/index'
 export default {
   components: {
     ScrollLoad
@@ -54,11 +53,10 @@ export default {
   },
 
   created() {
-    // this.initData();
+    
   },
 
   methods:{
-
     async requestListData() {
       this.initData();
     },
@@ -77,6 +75,7 @@ export default {
 
     handleItem(item) {
       console.log(item)
+      this.$router.push(`/itemDetail?id=${item.id}`); 
     }
   }
   
