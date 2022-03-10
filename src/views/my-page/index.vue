@@ -7,7 +7,6 @@
       <div class="header">
         <van-uploader
           :after-read="afterRead"
-          :before-read="beforeRead"
           :preview-full-image="false"
           :deletable="false"
           :max-count="1"
@@ -77,12 +76,10 @@
 </style>
 
 <script>
-
-// import LoginCom from '@/components/login-com/index.vue'
-
+import { uploadUserImage,getUserImage} from '../../services/set.js'
 export default {
   components: {
-    // LoginCom,
+    
   },
   data() {
     return {
@@ -91,18 +88,30 @@ export default {
       list:[],  
     }
   },
+
+  created() {
+    this.getImage();
+  },
+
   methods:{
     handleSet() {
       this.$router.push(`/set`); 
     },
-
-
-    afterRead() {
-
+    async afterRead(file) {
+      console.log(file)
+      const fd = new FormData()
+      fd.append('file', file.file)
+      const res = await uploadUserImage(fd);
+      if(res && res.resultCode == 200) {
+        this.getImage();
+      }else {
+        this.$toast('头像上传或更改失败');
+      }
     },
 
-    beforeRead() {
-
+    async getImage() {
+      const { data } = await getUserImage();
+      this.imageUrl = data
     }
 
   }

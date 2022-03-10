@@ -46,7 +46,7 @@
 </style>
 
 <script>
-import {uploadImage,uploadDongTai,deleteImage} from '../../services/home'
+import {uploadImage,uploadDongTai} from '../../services/home'
 export default {
   components: {
    
@@ -65,8 +65,6 @@ export default {
 
   methods:{
     async onClickLeft(){
-      // const {data} = await deleteImage();
-      // console.log('111',data)
       this.$router.go(-1)
     },
     async handlePublish(){

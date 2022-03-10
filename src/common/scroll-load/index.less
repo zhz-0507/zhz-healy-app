@@ -1,0 +1,57 @@
+
+// loading 旋转
+@keyframes loop {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.scroll-wrapper {
+  margin: 20px 0;
+  color: #CACACA;;
+  line-height: 18px;
+  height: 18px;
+  font-size: 12px;
+
+  .scroll-loading {
+    text-align: center;
+    height: 18px;
+    clear: both;
+
+    .icon-loading {
+      background: url("https://si.geilicdn.com/img-253500000169dc2081d20a216239-unadjust_36_36.png") no-repeat;
+      display: inline-block;
+      height: 18px;
+      vertical-align: -4px;
+      width: 18px;
+      background-position: center;
+      background-size: 18px;
+      animation-name: loop;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+
+  .scroll-bottom {
+    height: 18px;
+
+    &:before,
+    &:after {
+      position: relative;
+      display: inline-block;
+      content: '';
+      top: -1px;
+      vertical-align: middle;
+      height: 1px;
+      width:  13px;
+      line-height: 1px;
+      margin: 0 3px;
+      background-color: #CACACA;;
+    }
+  }
+}

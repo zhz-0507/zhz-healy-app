@@ -7,14 +7,19 @@ export function uploadImage(params) {
 export function uploadDongTai(params) {
   return axios.post('/uploadDongTai',params);
 }
+
+
 export function add(params) {
   return axios.post('/add',params);
 }
 
-//回退删除
-export function deleteImage(){
-  return axios.get('/deleteImage')
+// 首页动态
+export function getHomeDetail(pageNum,pageSize) {
+  return axios.get(`/showDongTai?pageNo=${pageNum}&pageSize=${pageSize}`);
 }
+
+
+
 
 
 
