@@ -4,17 +4,18 @@
     <div class="good" :style="{ paddingBottom: '100px'}">
         <!-- <header class="good-header">最新推荐</header> -->
         <div class="good-box">
-          <div class="good-item" v-for="(item,index) in list" :key="index" @click="handleItem(item)">
-            <img :src="(item.url)" class="item-img">
-            <div class="inner-txt">
+          <div class="good-item" v-for="(item,index) in list" :key="index">
+            <img :src="(item.url)" class="item-img" @click="handleItem(item)">
+            <div class="inner-txt"> 
               <div class="txt-title">{{item.content}}</div>
               <div class="txt-info">
                 <div class="txt-img">
                   <img :src="item.path" alt="">
                   <span>{{item.nickName}}</span>
                 </div>
-                <div class="icon-txt">
-                  <van-icon name="like-o" /><span>99</span>
+                <div class="icon-txt" @click="handleGood(item)">
+                  <i class="good-icon"></i>
+                  <span>{{item.totalLikeCount}}</span>
                 </div>
               </div>
             </div>
@@ -34,7 +35,7 @@
 
 <script>
 //api
-import {getHomeDetail} from '.././/../services/home'
+import {getHomeDetail,getGood} from '.././/../services/home'
 //components
 import ScrollLoad from '../../common/scroll-load/index.vue'
 export default {
@@ -49,6 +50,10 @@ export default {
       pageNum: 0,
       pageSize: 10,
       totalCount:0,  
+
+      goodNum:'',
+
+      ischeck:false,
     }
   },
 
@@ -73,9 +78,22 @@ export default {
       }
     },
 
+    // 去详情
     handleItem(item) {
       console.log(item)
       this.$router.push(`/itemDetail?id=${item.id}`); 
+    },
+
+    // 点赞
+    async handleGood(item) {
+      console.log(item.id);
+      const {data} = await getGood(item.id);
+      console.log('点赞的res',res)
+      if(data == 1) {
+        this.ischeck = true;
+      }else {
+        this.ischeck = false;
+      }
     }
   }
   

@@ -18,6 +18,11 @@ export function getHomeDetail(pageNum,pageSize) {
   return axios.get(`/showDongTai?pageNo=${pageNum}&pageSize=${pageSize}`);
 }
 
+// 首页动态
+export function getGood(id) {
+  return axios.get(`/addLike?dongTaiId=${id}`);
+}
+
 
 
 
