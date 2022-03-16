@@ -9,7 +9,10 @@ import { NavBar } from 'vant';
 import { Toast } from 'vant';
 import { Uploader } from 'vant';
 import { Dialog } from 'vant';
+import { Tab, Tabs } from 'vant';
 
+Vue.use(Tab);
+Vue.use(Tabs);
 // 全局注册
 Vue.use(Dialog);
 Vue.use(Uploader);

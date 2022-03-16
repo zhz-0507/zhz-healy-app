@@ -14,7 +14,8 @@
                   <span>{{item.nickName}}</span>
                 </div>
                 <div class="icon-txt" @click="handleGood(item)">
-                  <i class="good-icon"></i>
+                  <!-- <i class="good-icon-like" v-show="item.flag"></i> -->
+                  <i class="good-icon-unlike" v-show="item.flag"></i>
                   <span>{{item.totalLikeCount}}</span>
                 </div>
               </div>
