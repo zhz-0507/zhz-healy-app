@@ -38,6 +38,13 @@ export default {
 
   watch: {
       $route(to, from) {
+
+        console.log(to)
+        if(to.name == 'Cute') {
+          // window.location.href = "/cute"
+          
+        }
+    
         // 底部导航出现在应有的路由中
         if(this.ShowMenuList.includes(to.path)){
           this.isShowTab = true

@@ -35,6 +35,12 @@ export default {
     }
   },
 
+  mounted() {
+    console.log('1111父组件')
+  },
+  
+
+
   methods:{
     
   }

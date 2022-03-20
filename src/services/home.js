@@ -23,6 +23,11 @@ export function getGood(id) {
   return axios.get(`/addLike?dongTaiId=${id}`);
 }
 
+// 获取问卷调查列表
+export function getTestDetail(pageNum,pageSize) {
+  return axios.get(`/user/getPsychologyPageQuestion?pageNo=${pageNum}&pageSize=${pageSize}`);
+}
+
 
 
 

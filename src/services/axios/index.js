@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Vue from 'vue'
-// import router from '../router'
+import router from '../../router'
 import { Toast } from 'vant';
 
 Vue.use(Toast);
@@ -15,18 +15,24 @@ axios.defaults.headers['token'] = localStorage.getItem('token') || '';
 // post 请求时，发送 json 形式的数据包
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 // 返回的数据可以通过拦截处理后返回
+
+
+
 axios.interceptors.response.use(res => {
+  console.log('请求拦截',res);
   if(typeof res.data !== 'object'){
     return Promise.reject(res)
   }
-  if(res.data.resultCode != 200){
-      if(res.data.message) {
-        Toast(res.data.message);
-      }
-      if(res.data.resultCode == 416){
+  if(res.status != 200){
+    console.log('res')
+    axios.defaults.headers['token'] = localStorage.getItem('token') || '';
+      // if(res.data.message) {
+      //   Toast(res.data.message);
+      // }
+      // if(res.data.resultCode == 416){
           // 返回416代表没有登录状态，路由跳转到login页面
-        //   router.push({path:'/login'})
-      }
+          router.push({path:'/login'})
+      // }
       return Promise.reject(res.data)
   }
   return res.data

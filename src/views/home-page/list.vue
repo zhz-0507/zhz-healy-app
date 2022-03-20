@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <ScrollLoad ref="scrollLoader" :onLoad="requestListData"></ScrollLoad>
+    <!-- <ScrollLoad ref="scrollLoader" :onLoad="requestListData"></ScrollLoad> -->
 
     
   </div>
@@ -59,23 +59,26 @@ export default {
   },
 
   created() {
-    
+    console.log('222字组件')
+    this.initData();
   },
 
+  
+
   methods:{
-    async requestListData() {
-      this.initData();
-    },
+    // async requestListData() {
+    //   this.initData();
+    // },
 
     async initData() {
-      this.$refs.scrollLoader.load();
+      // this.$refs.scrollLoader.load();
       const res = await getHomeDetail(this.pageNum,this.pageSize)
       console.log('111',res)
       if(res && res.resultCode == 200) {
         this.list = res.data.lists;
 
-      }else {
-        this.$refs.scrollLoader.noMoreLoad();
+      // }else {
+      //   this.$refs.scrollLoader.noMoreLoad();
       }
     },
 

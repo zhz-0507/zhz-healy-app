@@ -5,14 +5,14 @@
             <span class="iconfont iconshouye span-icon"></span>
             <span class="span-title">首页</span>
         </router-link>
-        <router-link to="test" tag="li" class="nav-list-item">
+        <router-link to="test" tag="li" class="nav-list-item" >
             <span class="iconfont iconguangchang span-icon"></span>
             <span class="span-title">测试</span>
         </router-link>
-        <router-link to="publish" tag="li" class="nav-list-item">
-          <img src="https://gitee.com/vscodevue/drawingbed/raw/master/img/7e8b375f922849c1bff6755345ab55e.png" alt="">
+        <router-link to="publish" tag="li" class="nav-list-item" @click="JumpCute">
+          <img src="https://gitee.com/vscodevue/drawingbed/raw/master/img/7e8b375f922849c1bff6755345ab55e.png" alt="" @click="JumpPublish">
         </router-link>
-        <router-link to="cute" tag="li" class="nav-list-item">
+        <router-link to="cute" tag="li" class="nav-list-item" >
             <span class="iconfont iconicon span-icon"></span>
             <span class="span-title">治愈</span>
         </router-link>
@@ -42,7 +42,13 @@ export default {
   },
 
   methods:{
-    
+    JumpPublish() {
+      window.location.href = '/publish'
+    },
+    JumpCute() {
+      console.log('---')
+      window.location.href = '/cute'
+    }
   }
   
 

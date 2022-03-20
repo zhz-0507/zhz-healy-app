@@ -58,7 +58,7 @@ export default {
         localStorage.setItem('token',token)
         this.$toast('登录成功');
         setTimeout(() => {
-          this.$router.push(`/home`); 
+          window.location.href = './home';
         },200)
       }
     },
