@@ -64,6 +64,7 @@
 <script>
 
 // import LoginCom from '@/components/login-com/index.vue'
+import {logout} from '../../services/login'
 import { Dialog } from 'vant';
 export default {
   components: {
@@ -95,10 +96,18 @@ export default {
         title: '确定退出',
       }).then(res => {
         //处理退出
-        console.log(res)
+        this.outUser();
       });
       
-    }
+    },
+
+    async outUser() {
+      const res = await logout();
+      if(res && res.resultCode == 200) {
+        window.location.href = '/'
+      }
+      console.log('res',res)
+    },
   }
 
 }

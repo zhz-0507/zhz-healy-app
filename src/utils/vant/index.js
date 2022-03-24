@@ -10,7 +10,13 @@ import { Toast } from 'vant';
 import { Uploader } from 'vant';
 import { Dialog } from 'vant';
 import { Tab, Tabs } from 'vant';
+import { RadioGroup, Radio } from 'vant';
+import { Cell, CellGroup } from 'vant';
 
+Vue.use(Cell);
+Vue.use(CellGroup);
+Vue.use(Radio);
+Vue.use(RadioGroup);
 Vue.use(Tab);
 Vue.use(Tabs);
 // 全局注册

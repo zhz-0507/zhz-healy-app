@@ -20,6 +20,10 @@ export function updatePassword(params) {
   return axios.post(`/user/updatePassword/`,params);
 }
 
+export function logout() {
+  return axios.post(`/user/logout/`);
+}
+
 
 
 
