@@ -2,16 +2,16 @@
   <div class="wrapper">
     <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white" height="200px">
       <van-swipe-item >
-        <img src="../../assets/banner/04.png" alt="">
+        <img src="../../assets/banner/QQ20220326-0.jpg" alt="">
       </van-swipe-item>
       <van-swipe-item>
-        <img src="../../assets/banner/04.png" alt="">
+        <img src="../../assets/banner/QQ20220326-1.jpg" alt="">
       </van-swipe-item>
       <van-swipe-item>
-        <img src="../../assets/banner/04.png" alt="">
+        <img src="../../assets/banner/QQ20220326-2.png" alt="">
       </van-swipe-item>
       <van-swipe-item>
-        <img src="../../assets/banner/04.png" alt="">
+        <img src="../../assets/banner/QQ20220326-3.png" alt="">
       </van-swipe-item>
     </van-swipe>
   </div>

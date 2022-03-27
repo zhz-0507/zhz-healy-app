@@ -25,7 +25,12 @@ export function getGood(id) {
 
 // 获取问卷调查列表
 export function getTestDetail(pageNum,pageSize) {
-  return axios.get(`/user/getPsychologyPageQuestion?pageNo=${pageNum}&pageSize=${pageSize}`);
+  return axios.get(`/user/question/`);
+}
+
+// 提交问卷
+export function getMaxResult(params) {
+  return axios.post(`/user/getMaxResult/`,params);
 }
 
 

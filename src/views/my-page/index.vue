@@ -52,7 +52,7 @@
           <span class="text">私信</span>
         </div>
       </div>
-      <!-- <div class="list">
+      <div class="list">
         <div class="title">
           <div class="back"></div>
           <h2>更多</h2>   
@@ -63,7 +63,7 @@
             <span>{{item.title}}</span>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
     
       
@@ -76,7 +76,13 @@
 </style>
 
 <script>
-import { uploadUserImage,getUserImage} from '../../services/set.js'
+import { uploadUserImage,getUserImage ,getInfo} from '../../services/set.js'
+import oneIcon from '../../assets/icon/QQ20220327-0.png'
+import twoIcon from '../../assets/icon/QQ20220327-1.png'
+import threeIcon from '../../assets/icon/QQ20220327-2.png'
+import fourIcon from '../../assets/icon/QQ20220327-3.png'
+import fiveIcon from '../../assets/icon/QQ20220327-4.png'
+import sixIcon from '../../assets/icon/QQ20220327-5.png'
 export default {
   components: {
     
@@ -85,11 +91,39 @@ export default {
     return {
       imageUrl: '',
       user:{},
-      list:[],  
+      list:[
+        {
+          url:oneIcon,
+          title:"我的课程",
+        },
+        {
+          url:twoIcon,
+          title:"客服中心",
+        },
+        {
+          url:threeIcon,
+          title:"创作中心",
+        },
+        {
+          url:fourIcon,
+          title:"安全中心",
+        },
+        {
+          url:fiveIcon,
+          title:"我的帖子",
+        },
+        {
+          url:sixIcon,
+          title:"实名认证",
+        },
+      ],  
     }
   },
 
   created() {
+  
+    this.getUserInfo();
+
     this.getImage();
   },
 
@@ -112,6 +146,16 @@ export default {
     async getImage() {
       const { data } = await getUserImage();
       this.imageUrl = data
+    },
+
+    async getUserInfo() {
+      const { data }  = await getInfo();
+      this.user = {
+        nickName:data.nickName,
+        introduceSign:data.introduceSign,
+      }
+      console.log('data',data)
+
     }
 
   }

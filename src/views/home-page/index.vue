@@ -4,7 +4,7 @@
     <van-search
       v-model="searchValue"
       shape="round"
-      background="#5A98FE"
+      background="#6987EA"
       placeholder="请输入搜索关键词"
     />
 

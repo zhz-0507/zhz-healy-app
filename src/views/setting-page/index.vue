@@ -8,16 +8,8 @@
         </van-nav-bar>
         <div class="main">
             <div class="item-list">
-                <div class="item" @click="goto('means')">
+                <div class="item" @click="handlePerson">
                     <span>个人资料</span>
-                    <van-icon name="arrow" size="20" />
-                </div>
-                <div class="item">
-                    <span>账号绑定</span>
-                    <van-icon name="arrow" size="20" />
-                </div>
-                <div class="item">
-                    <span>账号安全</span>
                     <van-icon name="arrow" size="20" />
                 </div>
             </div>
@@ -85,9 +77,24 @@ export default {
       this.$router.go(-1)
     },
 
+
+    handlePerson() {
+      this.$router.push(`/means`)
+    },
+
     // 切换账号
     handleChange() {
-
+      Dialog.confirm({
+          title: '切换账号',
+          message: '您确定要切换账号吗？',
+      })
+      .then(() => {
+          // on confirm 
+          this.outUser()
+      })
+      .catch(() => {
+          // on cancel
+      });
     },
 
     // 退出

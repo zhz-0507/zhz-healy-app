@@ -10,7 +10,7 @@
             <span class="span-title">测试</span>
         </router-link>
         <router-link to="publish" tag="li" class="nav-list-item" @click="JumpCute">
-          <img src="https://gitee.com/vscodevue/drawingbed/raw/master/img/7e8b375f922849c1bff6755345ab55e.png" alt="" @click="JumpPublish">
+          <img src="../../assets/publish/QQ20220326-0.png" alt="" @click="JumpPublish">
         </router-link>
         <router-link to="cute" tag="li" class="nav-list-item" >
             <span class="iconfont iconicon span-icon"></span>

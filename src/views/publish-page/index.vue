@@ -25,7 +25,7 @@
           <template #preview-cover="{ file }">
               <div class="preview-cover van-ellipsis">{{ file.name }}</div>
           </template>
-          <img  class="upload" src="https://gitee.com/vscodevue/drawingbed/raw/master/img/35.png">
+          <img  class="upload" src="../../assets/publish/QQ20220326-1.png">
           </van-uploader>
           <div class="end">
             <div class="wrapper-iconfont">
