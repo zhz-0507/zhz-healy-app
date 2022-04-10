@@ -19,12 +19,12 @@ axios.defaults.headers.post['Content-Type'] = 'application/json'
 
 
 axios.interceptors.response.use(res => {
-  console.log('请求拦截',res);
+  
   if(typeof res.data !== 'object'){
     return Promise.reject(res)
   }
   if(res.status != 200){
-    console.log('res')
+    
     axios.defaults.headers['token'] = localStorage.getItem('token') || '';
       // if(res.data.message) {
       //   Toast(res.data.message);

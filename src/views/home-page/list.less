@@ -49,6 +49,9 @@
   display: flex;
   align-items: center;
   span{
+    // height: 20px;
+    font-size: 14px;
+    text-align: right;
     margin-left: 6px;
   }
 }
@@ -59,11 +62,40 @@
   font-size: 18px;
   color: #222222;
   letter-spacing: 0;
-  line-height: 32px;
+  margin-top: 10px;
+  // line-height: 32px;
   img{
     width: 25px;
     height: 25px;
     border-radius: 50%;
+  }
+}
+
+.bottom-indo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .left{
+    display: flex;
+    align-items: center;
+  }
+  img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+  span{
+    margin-left: 4px;
+  }
+
+  .right{
+    display: flex;
+    align-items: center;
+    span{
+      font-size: 16px;
+      margin-right: 4px;
+    }
   }
 }
 
@@ -82,6 +114,7 @@
   overflow: hidden;/*超出部分隐藏*/
   text-overflow:ellipsis;/* 超出部分显示省略号 */
   white-space: nowrap;/*规定段落中的文本不进行换行 */
+  margin-bottom: 5px;
 }
 
 .active{

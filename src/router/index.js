@@ -72,7 +72,22 @@ const routes = [
     path: '/teacher',
     name: 'Teacher',
     component: () => import(/* webpackChunkName: "about" */ '../views/test-page/teacher.vue')
-  }
+  },
+  {
+    path: '/detail/:id',
+    name: 'Detail',
+    component: () => import(/* webpackChunkName: "about" */ '../views/home-page/detail.vue')
+  },
+  {
+    path: '/swipertext/:id',
+    name: 'swipertext',
+    component: () => import(/* webpackChunkName: "login" */ '../components/swiper/text.vue'),
+  },
+  {
+    path: '/sleep',
+    name: 'Sleep',
+    component: () => import(/* webpackChunkName: "login" */ '../views/cute-page /sleep/sleep.vue'),
+  },
 ]
 
 const router = new VueRouter({

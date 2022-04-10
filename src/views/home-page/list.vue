@@ -8,16 +8,17 @@
             <img :src="(item.url)" class="item-img" @click="handleItem(item)">
             <div class="inner-txt"> 
               <div class="txt-title">{{item.content}}</div>
-              <div class="txt-info">
-                <div class="txt-img">
-                  <img :src="item.path" alt="">
-                  <span>{{item.nickName}}</span>
-                </div>
-                <div class="icon-txt" @click="handleGood(item)">
-                  <!-- <i class="good-icon-like" v-show="item.flag"></i> -->
-                  <i class="good-icon-unlike" v-show="item.flag"></i>
-                  <span>{{item.totalLikeCount}}</span>
-                </div>
+            </div>
+            <div class="bottom-indo">
+              <div class="left">
+                <img :src="item.path">
+                <span>{{item.nickName}}</span>
+              </div>
+              
+              <div class="right" @click="handleGood(item)">
+                <span>{{item.totalLikeCount}}</span>
+                <i class="good-icon-like" v-if="item.flag"></i>
+                <i class="good-icon-unlike" v-else></i>
               </div>
             </div>
           </div>
@@ -49,7 +50,7 @@ export default {
       
       list:[],
       pageNum: 0,
-      pageSize: 10,
+      pageSize: 50,
       totalCount:0,  
 
       goodNum:'',
@@ -85,19 +86,28 @@ export default {
     // 去详情
     handleItem(item) {
       console.log(item)
-      this.$router.push(`/itemDetail?id=${item.id}`); 
+
+      // return
+      this.$router.push(`/Detail/${item.id}`); 
     },
 
+    
     // 点赞
     async handleGood(item) {
-      console.log(item.id);
+     
+      console.log(item);
       const {data} = await getGood(item.id);
-      console.log('点赞的res',res)
+      console.log('点赞的res',data)
       if(data == 1) {
         this.ischeck = true;
+        this.$toast('点赞+1');
       }else {
         this.ischeck = false;
+        this.$toast('取消点赞');
       }
+
+      this.initData()
+
     }
   }
   

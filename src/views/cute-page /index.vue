@@ -5,7 +5,7 @@
         <div v-for="(item,index) in loaclData" :key="index">
           <van-tab :title="item.title">
             <div class="item-list" v-for="(info ,index) in item.arr" :key="index">
-              <div class="item">
+              <div class="item" @click="hanldeJumpSleep(info)">
                 <div class="wrapper"><img :src="info.image" alt=""></div>
                 <div class="wenzi">
                   <p class="title">{{info.titleBanner}}</p>
@@ -165,7 +165,10 @@ export default {
 
   },
   methods:{
-    
+    hanldeJumpSleep(index) {
+      window.location.href = './sleep'
+      console.log(index,'--')
+    }
 
   }
 

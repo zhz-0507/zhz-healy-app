@@ -12,7 +12,11 @@ import { Dialog } from 'vant';
 import { Tab, Tabs } from 'vant';
 import { RadioGroup, Radio } from 'vant';
 import { Cell, CellGroup } from 'vant';
+import { ShareSheet } from 'vant';
+import { Popup } from 'vant';
 
+Vue.use(Popup);
+Vue.use(ShareSheet);
 Vue.use(Cell);
 Vue.use(CellGroup);
 Vue.use(Radio);

@@ -1,8 +1,8 @@
 <template>
   <div class="register-index">
     <div class="register-header">
-      <div class="txt-t">欢迎来到我的毕业设计</div>
-      <div class="txt-b">每日一用 消除烦恼</div>
+      <div class="txt-t">心灵健康治愈系统</div>
+      <div class="txt-b">拒绝忧虑 消除烦恼</div>
     </div>
 
     <RegisrterCom ref="refRegister"></RegisrterCom>
